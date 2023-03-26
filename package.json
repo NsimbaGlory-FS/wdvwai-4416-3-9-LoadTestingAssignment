@@ -1,0 +1,23 @@
+{
+  "name": "wdv_4416_load_testing_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

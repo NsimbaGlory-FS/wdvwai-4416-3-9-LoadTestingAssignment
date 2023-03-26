@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "71a662fe-9a3f-4f4f-8a8b-a3529c5f24b1",
+		"name": "WDV4416_Load_Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18173194"
+	},
+	"item": [
+		{
+			"name": "Routes - GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message User - GET\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"message\", \"Successful GET\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Complete Payload response\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const user = response.user;\r",
+							"    pm.expect(user).to.have.property(\"name\", \"WDV 4416\");\r",
+							"    pm.expect(user).to.have.property(\"address\", \"500 Full Sail Avenue\");\r",
+							"    pm.expect(user).to.have.property(\"city\", \"Orlando\");\r",
+							"    pm.expect(user).to.have.property(\"state\", \"FL\");\r",
+							"    pm.expect(user).to.have.property(\"zip\", \"31670\");\r",
+							"    pm.expect(user).to.have.property(\"ccNumber\", \"4567128923459023\");\r",
+							"    pm.expect(user).to.have.property(\"ssn\", \"555-55-5555\");\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes - GET by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message User - GET\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"message\", \"Successful GET\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Complete Payload response\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const user = response.user;\r",
+							"    pm.expect(user).to.have.property(\"name\", \"WDV 4416\");\r",
+							"    pm.expect(user).to.have.property(\"address\", \"500 Full Sail Avenue\");\r",
+							"    pm.expect(user).to.have.property(\"city\", \"Orlando\");\r",
+							"    pm.expect(user).to.have.property(\"state\", \"FL\");\r",
+							"    pm.expect(user).to.have.property(\"zip\", \"31670\");\r",
+							"    pm.expect(user).to.have.property(\"ccNumber\", \"4567128923459023\");\r",
+							"    pm.expect(user).to.have.property(\"ssn\", \"555-55-5555\");\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes - POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message User - POST\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"message\", \"Successful Post\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Complete Payload response\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const user = response.user;\r",
+							"    pm.expect(user).to.have.property(\"name\", \"Full Sail University\");\r",
+							"    pm.expect(user).to.have.property(\"address\", \"3300 University Blvd\");\r",
+							"    pm.expect(user).to.have.property(\"city\", \"Winter Park\");\r",
+							"    pm.expect(user).to.have.property(\"state\", \"FL\");\r",
+							"    pm.expect(user).to.have.property(\"zip\", \"32792\");\r",
+							"    pm.expect(user).to.have.property(\"ccNumber\", \"1234123412341234\");\r",
+							"    pm.expect(user).to.have.property(\"ssn\", \"999-99-9999\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"name\": \"Full Sail University\",\r\n      \"address\": \"3300 University Blvd\",\r\n      \"city\": \"Winter Park\",\r\n      \"state\": \"FL\",\r\n      \"zip\": \"32792\",\r\n      \"ccNumber\": \"1234123412341234\",\r\n      \"ssn\": \"999-99-9999\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/routes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes - PATCH by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message User - Patch\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"message\", \"Successful Patch\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Complete Payload response\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const user = response.user;\r",
+							"    pm.expect(user).to.have.property(\"_id\", \"45\");\r",
+							"    pm.expect(user).to.have.property(\"name\", \"Full Sail University\");\r",
+							"    pm.expect(user).to.have.property(\"address\", \"3300 University Blvd\");\r",
+							"    pm.expect(user).to.have.property(\"city\", \"Winter Park\");\r",
+							"    pm.expect(user).to.have.property(\"state\", \"FL\");\r",
+							"    pm.expect(user).to.have.property(\"zip\", \"32791\");\r",
+							"    pm.expect(user).to.have.property(\"ccNumber\", \"1234123412349999\");\r",
+							"    pm.expect(user).to.have.property(\"ssn\", \"123-45-6789\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Metadata\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const metadata = response.metadata;\r",
+							"    pm.expect(metadata).to.have.property(\"modifiedCount\", 1);\r",
+							"    pm.expect(metadata).to.have.property(\"acknowledged\", true);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"name\": \"Full Sail University\",\r\n      \"address\": \"3300 University Blvd\",\r\n      \"city\": \"Winter Park\",\r\n      \"state\": \"FL\",\r\n      \"zip\": \"32791\",\r\n      \"ccNumber\": \"1234123412349999\",\r\n      \"ssn\": \"123-45-6789\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/routes/45",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes - DELETE by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Message User - Patch\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"message\", \"Successful Delete\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Complete Payload response\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"id\", \"55\");\r",
+							"    pm.expect(response).to.have.property(\"user\", null);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Test Metadata\", () => {\r",
+							"    const response = pm.response.json();\r",
+							"    const metadata = response.metadata;\r",
+							"    pm.expect(metadata).to.have.property(\"modifiedCount\", 1);\r",
+							"    pm.expect(metadata).to.have.property(\"acknowledged\", true);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"name\": \"Full Sail University\",\r\n      \"address\": \"3300 University Blvd\",\r\n      \"city\": \"Winter Park\",\r\n      \"state\": \"FL\",\r\n      \"zip\": \"32791\",\r\n      \"ccNumber\": \"1234123412349999\",\r\n      \"ssn\": \"123-45-6789\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/routes/55",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"routes",
+						"55"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
